@@ -39,7 +39,7 @@ local UserInputService = game:GetService("UserInputService")
 local ContentProvider = game:GetService("ContentProvider")
 local StarterGui = game:GetService("StarterGui")
 local Players = game:GetService("Players")
-local Types = require("Types")
+local Types = require(script.Parent.Types)
 
 -- TYPES
 export type Icon = Types.Icon
@@ -48,7 +48,7 @@ export type Icon = Types.Icon
 -- Multiple Icons packages may exist at runtime (for instance if the developer additionally uses HD Admin)
 -- therefore this ensures that the first required package becomes the dominant and only functioning module
 local iconModule = script
-local Reference = require("Reference")
+local Reference = require(script.Parent.Reference)
 local referenceObject = Reference.getObject()
 local leadPackage = referenceObject and referenceObject.Value
 if leadPackage and leadPackage ~= iconModule then
@@ -59,21 +59,21 @@ if not referenceObject then
 end
 
 -- MODULES
-local Signal = require("GoodSignal")
-local Janitor = require("Janitor")
-local Utility = require("Utility")
-local Themes = require("Themes")
-local Gamepad = require("Gamepad")
-local Overflow = require("Overflow")
+local Signal = require(script.Parent.Packages.GoodSignal)
+local Janitor = require(script.Parent.Packages.Janitor)
+local Utility = require(script.Parent.Utility)
+local Themes = require(script.Parent.Features.Themes)
+local Gamepad = require(script.Parent.Features.Gamepad)
+local Overflow = require(script.Parent.Features.Overflow)
 local Icon = {}
 Icon.__index = Icon
 
 --- LOCAL
 local localPlayer = Players.LocalPlayer
-local themes = iconModule.Features.Themes
+local themes = iconModule.Parent.Features.Themes
 local iconsDict = {}
 local anyIconSelected = Signal.new()
-local elements = iconModule.Elements
+local elements = iconModule.Parent.Elements
 local totalCreatedIcons = 0
 local preferredInput = {
 	mobile = Enum.PreferredInput.Touch,
@@ -157,7 +157,7 @@ task.defer(function()
 	for _, screenGui in pairs(Icon.container) do
 		screenGui.Parent = playerGui
 	end
-	require(iconModule.Attribute)
+	require(iconModule.Parent.Attribute)
 end)
 
 -- CONSTRUCTOR

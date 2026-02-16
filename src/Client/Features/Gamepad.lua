@@ -9,7 +9,7 @@ local GamepadService = game:GetService("GamepadService")
 local UserInputService = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
 
-local require = require(script.Parent.Parent.Parent.loader).load(script)
+local require = require(script.Parent.Parent.loader).load(script)
 
 -- LOCAL
 local DEFAULT_HIGHLIGHT_KEY = Enum.KeyCode.DPadUp -- The default key to highlight the topbar icon
@@ -41,7 +41,7 @@ function Gamepad.start(incomingIcon)
 		local previousHighlightedIcon
 		local usedIndicatorOnce = DEFAULT_HIGHLIGHT_KEY ~= Icon.highlightKey
 		local usedBOnce = DEFAULT_HIGHLIGHT_KEY ~= Icon.highlightKey
-		local Selection = require("Selection")
+		local Selection = require(script.Parent.Parent.Elements.Selection)
 		local function updateSelectedObject()
 			local icon = getIconFromSelectedObject()
 			local isUsingGamepad = UserInputService.PreferredInput == GAMEPAD_INPUT

@@ -1,6 +1,6 @@
-return function(icon)
-	local require = require(script.Parent.Parent.Parent.loader).load(script)
+local require = require(script.Parent.Parent.loader).load(script)
 
+return function(icon)
 	local menu = Instance.new("ScrollingFrame")
 	menu.Name = "Menu"
 	menu.BackgroundTransparency = 1
@@ -36,7 +36,7 @@ return function(icon)
 	menuGap.Parent = menu
 
 	local hasStartedMenu = false
-	local Themes = require("Themes")
+	local Themes = require(script.Parent.Parent.Features.Themes)
 	local function totalChildrenChanged()
 		local menuJanitor = icon.menuJanitor
 		local totalIcons = #icon.menuIcons

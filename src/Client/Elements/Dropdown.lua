@@ -1,7 +1,7 @@
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
-local require = require(script.Parent.Parent.Parent.loader).load(script)
-local Themes = require("Themes")
+local require = require(script.Parent.Parent.loader).load(script)
+local Themes = require(script.Parent.Parent.Features.Themes)
 local PADDING = 0 -- used to be 8
 return function(icon)
 	local dropdown = Instance.new("Frame") -- Instance.new("CanvasGroup")

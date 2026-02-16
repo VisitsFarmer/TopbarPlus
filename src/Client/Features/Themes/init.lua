@@ -5,9 +5,9 @@
 
 -- LOCAL
 local Themes = {}
-local require = require(script.Parent.Parent.Parent.loader).load(script)
-local Utility = require("Utility")
-local baseTheme = require("Default")
+local require = require(script.Parent.Parent.loader).load(script)
+local Utility = require(script.Parent.Parent.Utility)
+local baseTheme = require(script.Default)
 
 -- FUNCTIONS
 function Themes.getThemeValue(stateGroup, instanceName, property, iconState)

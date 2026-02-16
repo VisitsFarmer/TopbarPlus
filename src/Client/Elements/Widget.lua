@@ -2,10 +2,9 @@
 -- the icon (aka Widget) instance.
 -- This contains the core components of the icon such as the button, image, label and notice. It's
 -- also responsible for handling the automatic resizing of the widget (based upon image visibility and text length)
+local require = require(script.Parent.Parent.loader).load(script)
 
 return function(icon, Icon)
-	local require = require(script.Parent.Parent.Parent.loader).load(script)
-
 	local widget = Instance.new("Frame")
 	widget:SetAttribute("WidgetUID", icon.UID)
 	widget.Name = "Widget"
@@ -51,7 +50,7 @@ return function(icon, Icon)
 	iconCorner.Name = "UICorner"
 	iconCorner.Parent = button
 
-	local menu = require("Menu")(icon)
+	local menu = require(script.Parent.Parent.Elements.Menu)(icon)
 	local menuUIListLayout = menu.MenuUIListLayout
 	local menuGap = menu.MenuGap
 	menu.Parent = button
@@ -90,7 +89,7 @@ return function(icon, Icon)
 	clickRegion.SelectionGroup = true
 	clickRegion.Parent = iconSpot
 
-	local Gamepad = require("Gamepad")
+	local Gamepad = require(script.Parent.Parent.Features.Gamepad)
 	Gamepad.registerButton(clickRegion)
 
 	local clickRegionCorner = iconCorner:Clone()
@@ -326,7 +325,7 @@ return function(icon, Icon)
 			icon:updateParent()
 		end)
 	end
-	local Utility = require("Utility")
+	local Utility = require(script.Parent.Parent.Utility)
 	local handleLabelAndImageChanges = Utility.createStagger(0.01, handleLabelAndImageChangesUnstaggered)
 	local firstTimeSettingFontFace = true
 	icon:setBehaviour("IconLabel", "Text", handleLabelAndImageChanges)

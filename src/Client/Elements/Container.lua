@@ -1,6 +1,6 @@
 local hasBecomeOldTheme = false
 local previousInsetHeight = 0
-local require = require(script.Parent.Parent.Parent.loader).load(script)
+local require = require(script.Parent.Parent.loader).load(script)
 return function(Icon)
 	-- Has to be included for the time being due to this bug mentioned here:
 	-- https://devforum.roblox.com/t/bug/2973508/7
@@ -8,7 +8,7 @@ return function(Icon)
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local container = {}
-	local Signal = require("GoodSignal")
+	local Signal = require(script.Parent.Parent.Packages.GoodSignal)
 	local insetChanged = Signal.new()
 	local guiInset = GuiService:GetGuiInset()
 	local startInset = 0
@@ -54,7 +54,7 @@ return function(Icon)
 			hasBecomeOldTheme = true
 			task.defer(function()
 				-- If oldtopbar, apply the Classic theme
-				local Classic = require("Classic")
+				local Classic = require(script.Parent.Parent.Features.Classic)
 				Icon.modifyBaseTheme(Classic)
 
 				-- Also configure the oldtopbar correctly

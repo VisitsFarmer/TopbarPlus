@@ -1,6 +1,6 @@
-return function(icon, Icon)
-	local require = require(script.Parent.Parent.Parent.loader).load(script)
+local require = require(script.Parent.Parent.loader).load(script)
 
+return function(icon, Icon)
 	local notice = Instance.new("Frame")
 	notice.Name = "Notice"
 	notice.ZIndex = 25
@@ -36,9 +36,9 @@ return function(icon, Icon)
 	noticeLabel.Font = Enum.Font.Arial
 	noticeLabel.Parent = notice
 
-	local Janitor = require("Janitor")
-	local Signal = require("GoodSignal")
-	local Utility = require("Utility")
+	local Janitor = require(script.Parent.Parent.Packages.Janitor)
+	local Signal = require(script.Parent.Parent.Packages.GoodSignal)
+	local Utility = require(script.Parent.Parent.Utility)
 	icon.noticeChanged:Connect(function(totalNotices)
 		-- Notice amount
 		if not totalNotices then

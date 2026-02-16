@@ -19,9 +19,9 @@
 ]]
 
 task.defer(function()
-	local require = require(script.Parent.Parent.loader).load(script)
+	local require = require(script.Parent.loader).load(script)
 	local RunService = game:GetService("RunService")
-	local VERSION = require("VERSION")
+	local VERSION = require(script.Parent.VERSION)
 	local appVersion = VERSION.getAppVersion()
 	local latestVersion = VERSION.getLatestVersion()
 	local isOutdated = not VERSION.isUpToDate()

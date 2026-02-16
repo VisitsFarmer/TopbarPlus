@@ -2,6 +2,7 @@
 
 -- LOCAL
 local Utility = {}
+local require = require(script.Parent.loader).load(script)
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
@@ -220,7 +221,7 @@ function Utility.getClippedContainer(screenGui)
 	return clippedContainer
 end
 
-local Janitor = require("Janitor")
+local Janitor = require(script.Parent.Packages.Janitor)
 local GuiService = game:GetService("GuiService")
 function Utility.clipOutside(icon, instance)
 	local cloneJanitor = icon.janitor:add(Janitor.new())

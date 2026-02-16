@@ -11,8 +11,8 @@ local iconsDict
 local currentCamera = workspace.CurrentCamera
 local overflowIcons = {}
 local overflowIconUIDs = {}
-local require = require(script.Parent.Parent.Parent.loader).load(script)
-local Utility = require("Utility")
+local require = require(script.Parent.Parent.loader).load(script)
+local Utility = require(script.Parent.Parent.Utility)
 local beginCheckingCenterIcons = false
 local beganSecondaryCenterCheck = false
 local Icon
