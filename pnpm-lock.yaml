@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@quenty/loader':
+        specifier: ^10.9.3
+        version: 10.9.3
+
+packages:
+
+  '@quenty/loader@10.9.3':
+    resolution: {integrity: sha512-aBzmGbQ5im4uMhat0rh4EDL8LodNl+KAlppDu1ul7Cm/FN8BCFZeYf2GweNFQPDWSsSiI0BpmsgI5jwpNnURNQ==}
+
+snapshots:
+
+  '@quenty/loader@10.9.3': {}
